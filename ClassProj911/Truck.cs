@@ -13,18 +13,26 @@ namespace ClassProj911
         public string CabType { get; set; }
         public bool isTowing { get; set; } = false;
 
+        private string line;
+
         public string startTow()
         {
-            isTowing = true;
-            var line = "Towing has begun.  \nWow!  The people sitting in the " + CabType + " are in for a show!";
-
+            if (isOn)
+            {
+                isTowing = true;
+                line = "Towing has begun.  \nWow!  The people sitting in the " + CabType + " are in for a show!";
+            }
+            else
+            {
+                line = "The engine must be started first.";
+            }
             return line;
         }
 
         public string stopTow()
         {
             isTowing = false;
-            var line = "Towing has stopped.";
+            line = "Towing has stopped.";
 
             return line;
         }

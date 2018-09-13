@@ -18,16 +18,17 @@ namespace ClassProj911
                 "Start Engine",
                 "Stop Engine",
                 "Start Tow",
-                "Stop Tow"
+                "Stop Tow",
+                "Color"
             } );
             var chevy = new Truck();
             chevy.CabType = "Extended Cab";
             chevy.EngineType = "Hybrid";
             chevy.Color = "Tangerine";
-            
-            
-            UserInput();
 
+            Console.WriteLine("Welcome to C.A.R. \nType 'Help' to see the list of available commands");
+            UserInput();
+            
             void UserInput()
             {
                 do
@@ -63,6 +64,10 @@ namespace ClassProj911
                     else if (input == "Stop Tow")
                     {
                         Console.WriteLine(chevy.stopTow());
+                    }
+                    else if (input == "Color")
+                    {
+                        Console.WriteLine("The color is " + chevy.Color + ".");
                     }
                     else
                     {
